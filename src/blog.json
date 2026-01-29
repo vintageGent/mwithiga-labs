@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "date": "2026-01-30",
+        "title": "Mwithiga Labs Online: The Seeker's Command Center",
+        "category": "Lab Update",
+        "excerpt": "Today marks the launch of Mwithiga Labs. A unified hub for my PR and Cybersecurity projects, built on the 'Emerald Seeker' design system.",
+        "content": "Today marks the launch of Mwithiga Labs. A unified hub for my PR and Cybersecurity projects, built on the 'Emerald Seeker' design system. This isn't just a portfolio; it's a living workspace where I fuse communication strategy with technical security."
+    },
+    {
+        "id": 2,
+        "date": "2026-01-29",
+        "title": "Dispatch v1.2: Solving the Connection Friction",
+        "category": "Tool Evolution",
+        "excerpt": "Evolving the Email Assistant into Dispatch. Adding phone and social harvesting to create a true one-click connection portal.",
+        "content": "A case study on how Dispatch evolved from a simple email harvester into a professional connection engine. By adding phone number and social media link harvesting (Instagram, Twitter, LinkedIn), we've reduced the friction of professional outreach significantly."
+    }
+]
