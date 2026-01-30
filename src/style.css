@@ -614,6 +614,44 @@ h1.glitch-text {
   filter: drop-shadow(0 0 5px var(--mint));
 }
 
+.blog-nav-link {
+  color: var(--mint) !important;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  background: rgba(47, 169, 188, 0.05);
+}
+
+.blog-nav-link:hover {
+  background: var(--mint);
+  color: var(--bg-deep) !important;
+}
+
+.blog-archive-cta {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 3rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.blog-archive-cta p {
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.archive-btn {
+  background: var(--glass);
+  border-color: var(--mint);
+  color: var(--mint);
+}
+
+.archive-btn:hover {
+  background: var(--mint);
+  color: var(--bg-deep);
+}
+
 /* Modal Styles */
 .modal {
   display: none;
