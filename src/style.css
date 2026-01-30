@@ -519,12 +519,97 @@ h1.glitch-text {
   .contact-grid {
     flex-direction: column;
   }
+
+  .main-header {
+    position: absolute;
+    top: 0.5rem;
+  }
+
+  .header-content {
+    padding: 0.8rem 1.2rem;
+    border-radius: 24px;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .m-letter {
+    font-size: 1.6rem;
+  }
+
+  .nav-link {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-section {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  h1.glitch-text {
+    font-size: 2.5rem;
+  }
+
+  .wings-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .wing {
+    padding: 1.5rem;
+  }
+
+  .about-content {
+    padding: 2rem;
+  }
+
+  .profile-image-container {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    padding: 0.6rem 1rem;
+  }
+
+  .greeting,
+  .blog-category {
+    display: none;
+  }
+
+  .nav-link {
+    margin-left: 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .m-letter {
+    font-size: 1.4rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
 }
 
 .header-logo {
-  height: 40px;
-  width: 40px;
-  margin-right: 10px;
+  height: 32px;
+  width: 32px;
+  margin-right: 8px;
   vertical-align: middle;
   filter: drop-shadow(0 0 5px var(--mint));
 }
