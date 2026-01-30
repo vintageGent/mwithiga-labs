@@ -13,8 +13,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;700&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index--j9ozZnc.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-D2efLrxD.css">
+  <script type="module" crossorigin src="/mwithiga-labs/assets/index-CJk7vBbw.js"></script>
+  <link rel="stylesheet" crossorigin href="/mwithiga-labs/assets/index-DXB4Tz8c.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     <header class="main-header">
       <div class="header-content glass-morphism">
         <div class="logo-container">
-          <img src="/logo.png" alt="Mwithiga Labs Logo" class="header-logo">
+          <img src="/mwithiga-labs/logo.png" alt="Mwithiga Labs Logo" class="header-logo">
           <span class="logo-text">Mwithiga <span class="highlight">Labs</span></span>
         </div>
         <p class="greeting">Hey there, fellow seeker! Welcome to the Lab.</p>
@@ -40,8 +40,8 @@
       <section class="hero-section">
         <div class="container">
           <h1 class="glitch-text">Bridging PR & Technology</h1>
-          <p class="hero-sub">I'm a Public Relations student building the next generation of communication and security
-            tools. Explore the lab below.</p>
+          <p class="hero-sub">Strategic Communicator & Security Tech Enthusiast bridging the gap between high-impact PR
+            and tactical innovation. Welcome to the Lab—where I build the tools that secure our connections.</p>
         </div>
       </section>
 
@@ -79,6 +79,22 @@
             </div>
             <a href="https://github.com/vintageGent/pr-starter-kit-" target="_blank" class="tool-btn">Access Library</a>
           </div>
+
+          <div id="the-lede-card" class="tool-card glass-morphism">
+            <div class="card-header">
+              <h3>The Lede</h3>
+              <span class="badge stable">v1.1 Stable</span>
+            </div>
+            <p class="tool-desc">An intelligent partner for crafting industry-standard press releases. Write with
+              confidence and precision.</p>
+            <div class="usage-container">
+              <span class="usage-label">Usage Level: Editor's Choice</span>
+              <div class="usage-bar">
+                <div class="usage-fill" style="width: 70%;"></div>
+              </div>
+            </div>
+            <a href="https://github.com/vintageGent/the-lede" target="_blank" class="tool-btn">Draft Release</a>
+          </div>
         </div>
 
         <!-- Security Wing -->
@@ -113,6 +129,23 @@
             </div>
             <a href="https://github.com/vintageGent/portal" target="_blank" class="tool-btn">Open Portal</a>
           </div>
+
+          <div id="homelab-card" class="tool-card glass-morphism">
+            <div class="card-header">
+              <h3>HomeLab Guide</h3>
+              <span class="badge stable">v1.0 Guide</span>
+            </div>
+            <p class="tool-desc">The foundation of research. A step-by-step blueprint for building your own secure
+              virtual environment.</p>
+            <div class="usage-container">
+              <span class="usage-label">Usage Level: Essential Build</span>
+              <div class="usage-bar">
+                <div class="usage-fill" style="width: 80%;"></div>
+              </div>
+            </div>
+            <a href="https://github.com/vintageGent/homelab-setup-guide" target="_blank" class="tool-btn">Start
+              Build</a>
+          </div>
         </div>
       </section>
 
@@ -124,7 +157,6 @@
             <div class="loading">Infiltrating the archives...</div>
           </div>
         </div>
-      </section>
       </section>
 
       <section id="about" class="about-section">
@@ -139,7 +171,8 @@
             <div class="about-text">
               <p>Hey there fellow seeker, I’m Mwithiga. Welcome to my lab.</p>
               <p>This is my specialized workspace situated at the intersection of Public Relations and Cybersecurity. As
-                a PR student and tech enthusiast, I strongly believe that technology should be an equalizer, not an
+                a Strategic Communicator and Tech Enthusiast, I strongly believe that technology should be an equalizer,
+                not an
                 obstacle. Join me as I fuse these two fields together.</p>
               <p>Every tool in this Lab is born from a real-world frustration and solved through code. I don't just
                 build software; I build connections.</p>
@@ -204,6 +237,21 @@
     <footer class="main-footer">
       <p>Mwithiga Labs &copy; 2026 | Built by a Seeker for Seekers</p>
     </footer>
+
+    <!-- Dispatch Decryption Modal -->
+    <div id="dispatch-modal" class="modal">
+      <div class="modal-content glass-morphism">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span id="modal-category" class="blog-category"></span>
+          <span id="modal-date" class="blog-date"></span>
+          <h2 id="modal-title"></h2>
+        </div>
+        <div id="modal-body" class="modal-body">
+          <!-- Full content will be injected here -->
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 

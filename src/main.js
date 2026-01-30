@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load Blog Posts (Lab Notes)
     const blogContainer = document.getElementById('blog-container');
+    const modal = document.getElementById('dispatch-modal');
+    const closeBtn = document.querySelector('.close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalCategory = document.getElementById('modal-category');
+    const modalDate = document.getElementById('modal-date');
+    const modalBody = document.getElementById('modal-body');
+
     if (blogContainer) {
         blogContainer.innerHTML = blogData.map(post => `
             <div class="blog-card glass-morphism">
@@ -14,10 +21,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="blog-date">${post.date}</span>
                 <h3>${post.title}</h3>
                 <p class="blog-excerpt">${post.excerpt}</p>
-                <a href="#" class="read-more">Decrypt Full Dispatch</a>
+                <a href="#" class="read-more" data-id="${post.id}">Decrypt Full Dispatch</a>
             </div>
         `).join('');
+
+        // Handle Read More clicks
+        blogContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('read-more')) {
+                e.preventDefault();
+                const postId = parseInt(e.target.getAttribute('data-id'));
+                const post = blogData.find(p => p.id === postId);
+
+                if (post) {
+                    modalTitle.textContent = post.title;
+                    modalCategory.textContent = post.category;
+                    modalDate.textContent = post.date;
+                    modalBody.innerHTML = `<p>${post.content}</p>`;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                }
+            }
+        });
     }
+
+    // Modal Close Logic
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
 
     // Add subtle hover effects to tool cards
     const cards = document.querySelectorAll('.tool-card, .blog-card');
