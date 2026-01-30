@@ -48,7 +48,7 @@ h3 {
 
 /* Header */
 .main-header {
-  position: fixed;
+  position: absolute;
   top: 1rem;
   left: 0;
   right: 0;
