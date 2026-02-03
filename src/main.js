@@ -1,6 +1,5 @@
 import './style.css'
 import blogData from './blog.json'
-import spotifyData from './spotify_data.json'
 
 // Mwithiga Labs - Interactive Functions
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,50 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Discovery Hub Logic (Neon Night FYP)
-    const masonryGrid = document.getElementById('masonry-grid');
-    const refreshBtn = document.getElementById('refresh-fyp');
-    const authBtn = document.getElementById('auth-spotify');
-
-    function renderDiscovery(data) {
-        if (!masonryGrid) return;
-
-        masonryGrid.innerHTML = data.map(track => `
-            <div class="masonry-item glass-morphism" style="min-height: ${track.height}">
-                <img src="${track.image}" alt="${track.title}" class="card-image">
-                <div class="card-overlay">
-                    <div class="card-title">${track.title}</div>
-                    <div class="card-artist">${track.artist}</div>
-                    <div class="spotify-embed-container">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${track.spotify_id}?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    if (masonryGrid) {
-        renderDiscovery(spotifyData);
-    }
-
-    if (refreshBtn) {
-        refreshBtn.addEventListener('click', () => {
-            masonryGrid.innerHTML = '<div class="loading">Reshuffling neon frequencies...</div>';
-            setTimeout(() => {
-                const shuffled = [...spotifyData].sort(() => 0.5 - Math.random());
-                renderDiscovery(shuffled);
-            }, 800);
-        });
-    }
-
-    if (authBtn) {
-        authBtn.addEventListener('click', () => {
-            alert('Seeker, the Spotify OAuth protocol is being calibrated. In the final build, this will connect your real-time FYP.');
-        });
-    }
 
     // Add subtle hover effects to tool cards
-    const cards = document.querySelectorAll('.tool-card, .blog-card, .masonry-item');
+    const cards = document.querySelectorAll('.tool-card, .blog-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.borderColor = 'var(--mint)';
