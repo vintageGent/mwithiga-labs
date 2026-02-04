@@ -179,6 +179,20 @@ h1.glitch-text {
   /* Amber/Gold for Advisory */
 }
 
+.advisory-intro {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hook-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffb74d;
+  margin-bottom: 1rem;
+  border-left: 3px solid #ffb74d;
+  padding-left: 1rem;
+}
+
 /* Tool Cards */
 .tool-card {
   margin-bottom: 1.5rem;

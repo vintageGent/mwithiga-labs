@@ -20,7 +20,7 @@
         "date": "2026-02-04",
         "title": "Incident 001: Hardening the SSH Gateway",
         "category": "Infrastructure Security",
-        "excerpt": "A hands-on case study in moving beyond defaults. Challenges in repository conflicts (Kali vs Ubuntu) and port-binding nuances.",
-        "content": "In this technical deep-dive, we moved a server from the default, vulnerable state to a hardened perimeter. <b>The Mission:</b> Disable root login, change the default port to 2222, and limit authentication attempts. <br><br><b>The Challenges:</b> We faced a 'FrankenDebian' repository conflict between Kali and Ubuntu sources on the host, which taught us the importance of environment isolation (VirtualBox). We also overcame a manual save issue in nano, confirming that in security, <i>intent is not configuration until it is verified.</i> <br><br><b>The Solution:</b> Repository cleanup, VM isolation, and use of 'ss' radar for final port verification. The gateway is now locked."
+        "excerpt": "A deep-dive into moving beyond defaults. Hello there fellow seeker, I’m Mwithiga and today I dived deep in hardening the SSH gateway.",
+        "content": "Hello there fellow seeker, I’m Mwithiga and today I dived deep in hardening the SSH gateway. Security isn't just about building walls; it's about making sure your doors have the right locks. <br><br><b>The Protocol:</b> I moved the primary entry point from Port 22 to Port 2222, disabled root login, and enforced a 3-attempt lockout. <br><br><b>The Challenge:</b> The biggest hurdle was the 'intent vs. configuration' gap — learning that a saved file in nano doesn't mean an active rule until verified by the radar (ss). The gateway is now verified and locked."
     }
 ]
