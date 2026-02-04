@@ -20,7 +20,15 @@
         "date": "2026-02-04",
         "title": "Incident 001: Hardening the SSH Gateway",
         "category": "Infrastructure Security",
-        "excerpt": "A deep-dive into moving beyond defaults. Hello there fellow seeker, I’m Mwithiga and today I dived deep in hardening the SSH gateway.",
-        "content": "Hello there fellow seeker, I’m Mwithiga and today I dived deep in hardening the SSH gateway. Security isn't just about building walls; it's about making sure your doors have the right locks. <br><br><b>The Protocol:</b> I moved the primary entry point from Port 22 to Port 2222, disabled root login, and enforced a 3-attempt lockout. <br><br><b>The Challenge:</b> The biggest hurdle was the 'intent vs. configuration' gap — learning that a saved file in nano doesn't mean an active rule until verified by the radar (ss). The gateway is now verified and locked."
+        "excerpt": "A deep-dive into moving beyond defaults. Hello there fellow seeker, I'm Mwithiga and today I dived deep in hardening the SSH gateway.",
+        "content": "Hello there fellow seeker, I'm Mwithiga and today I dived deep in hardening the SSH gateway. Security isn't just about building walls; it's about making sure your doors have the right locks. <br><br><b>The Protocol:</b> I moved the primary entry point from Port 22 to Port 2222, disabled root login, and enforced a 3-attempt lockout. <br><br><b>The Challenge:</b> The biggest hurdle was the 'intent vs. configuration' gap — learning that a saved file in nano doesn't mean an active rule until verified by the radar (ss). The gateway is now verified and locked."
+    },
+    {
+        "id": 4,
+        "date": "2026-02-04",
+        "title": "Incident 002: Building the Perimeter Defense",
+        "category": "Infrastructure Security",
+        "excerpt": "Layering UFW firewall and Fail2Ban intrusion prevention on top of the hardened SSH gateway.",
+        "content": "Hello there fellow seeker, I'm Mwithiga and today I built a defensive perimeter around my infrastructure using UFW and Fail2Ban. <br><br><b>The Mission:</b> Create a 'default deny' firewall that blocks everything except our custom SSH port, then add automated intrusion prevention to jail brute-force attackers. <br><br><b>The Challenge:</b> The critical lesson was sequence—you must allow your SSH port before enabling UFW, or you lock yourself out completely. <br><br><b>The Result:</b> Three defensive layers working in harmony: hardened SSH, firewall rules, and automated IP jailing."
     }
 ]
