@@ -23,8 +23,15 @@
           <img src="/logo.png" alt="Mwithiga Labs Logo" class="header-logo">
           <span class="logo-text">Mwithiga <span class="highlight">Labs</span></span>
         </div>
+        <!-- Hamburger Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Open Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
         <p class="greeting">Hey there, fellow seeker! Welcome to the Lab.</p>
-        <nav>
+        <nav class="desktop-nav">
           <a href="#communications" class="nav-link">Communications</a>
           <a href="#security" class="nav-link">Security</a>
           <a href="#advisory" class="nav-link">Advisory</a>
@@ -37,6 +44,26 @@
         </nav>
       </div>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer glass-morphism">
+      <div class="drawer-header">
+        <span class="drawer-title">Navigation</span>
+        <button id="close-drawer" class="close-drawer">&times;</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="#communications" class="mobile-nav-link">Communications</a>
+        <a href="#security" class="mobile-nav-link">Security</a>
+        <a href="#advisory" class="mobile-nav-link">Advisory</a>
+        <a href="#resources" class="mobile-nav-link">Resources</a>
+        <a href="#lab-notes" class="mobile-nav-link">Lab Notes</a>
+        <a href="https://mwithigalabs.hashnode.dev" target="_blank" class="mobile-nav-link highlight">Strategic Signals
+          ↗</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </nav>
+    </div>
+    <div id="drawer-overlay" class="drawer-overlay"></div>
 
     <main>
       <section class="hero-section">

@@ -71,9 +71,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth scroll for nav links
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
+    // Mobile Drawer Logic
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const closeDrawerBtn = document.getElementById('close-drawer');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleDrawer() {
+        mobileDrawer.classList.toggle('open');
+        drawerOverlay.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+
+        // Prevent body scrolling when menu is open
+        if (mobileDrawer.classList.contains('open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    function closeDrawer() {
+        mobileDrawer.classList.remove('open');
+        drawerOverlay.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleDrawer);
+    }
+
+    if (closeDrawerBtn) {
+        closeDrawerBtn.addEventListener('click', closeDrawer);
+    }
+
+    if (drawerOverlay) {
+        drawerOverlay.addEventListener('click', closeDrawer);
+    }
+
+    // Close drawer when a link is clicked
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+    });
+
+    // Smooth scroll for nav links (both desktop and mobile)
+    const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    allNavLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             if (href.startsWith('#')) {
