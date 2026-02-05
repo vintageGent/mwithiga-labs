@@ -731,6 +731,41 @@ h1.glitch-text {
   .stat-card {
     padding: 1rem;
   }
+
+  /* Mobile Header Fixes - Aggressive Cleanup */
+  .nav-link {
+    display: none;
+  }
+
+  /* Only show Contact link on mobile, hide Blog link to save space */
+  .nav-link[href="#contact"] {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    background: var(--glass);
+    border-radius: 20px;
+  }
+
+  .blog-nav-link {
+    display: none;
+    /* Hidden on mobile to prevent overlap */
+  }
+
+  .header-content {
+    padding: 0.5rem 1rem;
+    /* Reduce vertical padding */
+  }
+
+  .logo-text {
+    font-size: 1rem;
+    /* Slightly smaller logo text */
+  }
+
+  /* Increase padding to push content down further */
+  .hero-section {
+    padding-top: 11rem;
+  }
 }
 
 
