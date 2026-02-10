@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mwithiga Labs | Command Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="glass-container">
+        <header>
+            <div class="logo">MWITHIGA LABS <span class="v2-tag">v2.0</span></div>
+            <nav>
+                <a href="/" class="nav-link">Main Site</a>
+                <a href="#tools" class="active">Tools</a>
+                <a href="#compliance">Compliance</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1 class="glitch" data-text="The Cyber-PR Suite">The Cyber-PR Suite</h1>
+                <p class="subtitle">Architecting Trust through Information Security & Strategic Communication.</p>
+            </section>
+
+            <section id="tools" class="tool-grid">
+                <div class="tool-card" id="tool-portal">
+                    <div class="icon">🚀</div>
+                    <h3>Portal</h3>
+                    <p>Encrypted P2P file transfers tailored for PR data sovereignty.</p>
+                    <button onclick="launchTool('portal')">Deploy Tool</button>
+                    <div class="status">System: Online</div>
+                </div>
+
+                <div class="tool-card" id="tool-threatscope">
+                    <div class="icon">🔍</div>
+                    <h3>ThreatScope</h3>
+                    <p>Vulnerability assessment & network reconnaissance lenses.</p>
+                    <button onclick="launchTool('threatscope')">Deploy Tool</button>
+                    <div class="status">System: Ready</div>
+                </div>
+
+                <div class="tool-card" id="tool-lede">
+                    <div class="icon">📰</div>
+                    <h3>The Lede</h3>
+                    <p>Client-side PR dispatch analysis & generation engine.</p>
+                    <button onclick="launchTool('lede')">Launch Web App</button>
+                    <div class="status">System: Active</div>
+                </div>
+
+                <div class="tool-card" id="tool-dispatch">
+                    <div class="icon">🛰️</div>
+                    <h3>Dispatch</h3>
+                    <p>Dynamic connection engine for point-of-contact harvesting.</p>
+                    <button onclick="launchTool('dispatch')">Deploy Tool</button>
+                    <div class="status">System: Standby</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <span>&copy; 2026 Mwithiga Labs | Building for Kenyan SMEs</span>
+                <span class="dpa-badge">DPA 2019 Compliant</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
