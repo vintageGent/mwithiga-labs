@@ -98,16 +98,13 @@ const getLogs = (opId, targetValue) => {
     ];
 };
 
-let currentToolId = '';
 let isTyping = false;
 
 function launchTool(toolId) {
     if (isTyping) return;
 
-    currentToolId = toolId;
     const body = document.getElementById('terminal-body');
     const modal = document.getElementById('report-modal');
-
     if (!body || !modal) return;
 
     body.innerHTML = '';
@@ -132,7 +129,7 @@ function showMenu(toolId) {
 
     const title = document.createElement('div');
     title.textContent = '--- Choose an Operation ---';
-    title.style.marginBottom = '10px';
+    title.style.margin = '10px 0';
     menuContainer.appendChild(title);
 
     const menuItems = toolMenus[toolId] || [];
@@ -140,7 +137,11 @@ function showMenu(toolId) {
         const btn = document.createElement('button');
         btn.className = 'terminal-menu-item-btn';
         btn.textContent = item.label;
-        btn.onclick = () => promptForInput(item);
+        btn.onclick = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            promptForInput(item);
+        };
         menuContainer.appendChild(btn);
     });
 
@@ -160,7 +161,7 @@ function promptForInput(menuItem) {
     const input = document.createElement('input');
     input.type = 'text';
     input.className = 'terminal-input';
-    input.autofocus = true;
+    input.autocomplete = 'off';
 
     promptLine.appendChild(input);
     body.appendChild(promptLine);
@@ -173,14 +174,22 @@ function promptForInput(menuItem) {
             runOperation(menuItem.id, value);
         }
     });
+
+    // Mobile helper: ensure clicking the line focuses the input
+    promptLine.onclick = () => input.focus();
 }
 
 function runOperation(opId, targetValue) {
     const body = document.getElementById('terminal-body');
 
-    const logs = getLogs(opId, targetValue);
+    const selectionLog = document.createElement('div');
+    selectionLog.className = 'log-cmd';
+    selectionLog.textContent = `> Launching: ${opId} --target ${targetValue}`;
+    body.appendChild(selectionLog);
 
+    const logs = getLogs(opId, targetValue);
     let logIndex = 0;
+
     const logInterval = setInterval(() => {
         if (logIndex < logs.length) {
             const entry = logs[logIndex];
@@ -195,7 +204,7 @@ function runOperation(opId, targetValue) {
             const fin = document.createElement('div');
             fin.className = 'log-cmd';
             fin.style.marginTop = '20px';
-            fin.textContent = 'Operation Finalized. Press close to exit.';
+            fin.textContent = 'Operation Finalized. Press close (X) to return to dashboard.';
             body.appendChild(fin);
             body.scrollTop = body.scrollHeight;
         }
@@ -224,6 +233,7 @@ function closeModal() {
     isTyping = false;
 }
 
+// Global scope assignments
 window.launchTool = launchTool;
 window.closeModal = closeModal;
 
@@ -234,6 +244,14 @@ window.onclick = function (event) {
     }
 }
 
+// Check for deep links
+const urlParams = new URLSearchParams(window.location.search);
+const tool = urlParams.get('tool');
+if (tool) {
+    window.addEventListener('load', () => launchTool(tool));
+}
+
+// Background effect
 document.addEventListener('mousemove', (e) => {
     const bg = document.querySelector('.background-animation');
     if (!bg) return;
