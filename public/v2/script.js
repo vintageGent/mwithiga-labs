@@ -56,6 +56,57 @@ const toolMenus = {
     ]
 };
 
+const intelligenceData = {
+    'netscan': {
+        title: 'Network Reconnaissance Report',
+        risk: 'MEDIUM',
+        summary: 'Target network perimeter analyzed. Multiple services identified with legacy versioning.',
+        findings: [
+            'Port 80/tcp: nginx/1.14.0 - Vulnerable to HTTP Request Smuggling.',
+            'Port 443/tcp: OpenSSL 1.1.1 - End of Life support reached.',
+            'ICMP Echo: Target responds to pings, indicating permissive firewall rules.'
+        ],
+        compliance: 'DPA Section 31: Failure to implement technical measures against unauthorized access.',
+        evidence: 'Nmap 7.80 scan performed. NSE script results: ssl-enum-ciphers [Weak Ciphers Detected].'
+    },
+    'vulnscan': {
+        title: 'Web Vulnerability Audit',
+        risk: 'HIGH',
+        summary: 'Critical security headers and server-side configurations missing or misconfigured.',
+        findings: [
+            'Missing X-Frame-Options: Target is susceptible to Clickjacking attacks.',
+            'SQL Injection: Potential entry point detected on /api/v1/search endpoint.',
+            'Insecure Cookies: Session cookies missing "HttpOnly" and "Secure" flags.'
+        ],
+        compliance: 'DPA Section 25: Data Protection by Design and Default (Failed).',
+        evidence: 'X-Frame-Options header check: FAILED\nSQLi Polyglot Test: ERROR detected in Boolean-based response.'
+    },
+    'handshake': {
+        title: 'Portal Integrity Assurance',
+        risk: 'LOW',
+        summary: 'Peer-to-Peer encrypted tunnel established. Post-quantum signature verification successful.',
+        findings: [
+            'Peer Verified: Multi-factor key exchange confirmed.',
+            'Encryption: AES-256-GCM utilized for payload.',
+            'Latency: <15ms - High performance link maintained.'
+        ],
+        compliance: 'DPA Section 41: Implementation of appropriate technical and organizational measures for secure data transfer.',
+        evidence: 'RSA-4096 ephemeral key generated.\nTunnel Status: STABLE\nPeer ID: SENTINEL-ALPHA-ONE'
+    },
+    'harvest': {
+        title: 'Contact Intelligence Summary',
+        risk: 'LOW',
+        summary: 'Strategic points of contact captured across target domain buffers.',
+        findings: [
+            'Data Protection Officer (DPO) identified via public registry matching.',
+            'IT Security Manager contact harvested from LinkedIn API shard.',
+            '12 high-authority leads moved to Active Connection Pool.'
+        ],
+        compliance: 'DPA Section 29: Lawfulness of processing (Public Interest/Legitimate Interest baseline established).',
+        evidence: 'Source: LinkedIn Shards + Website Metadata Crawler.\nTotal Leads: 12\nConfidence Score: 94%'
+    }
+};
+
 const getLogs = (opId, targetValue) => {
     const templates = {
         'netscan': [
@@ -65,7 +116,7 @@ const getLogs = (opId, targetValue) => {
             { text: '[+] Open Port Found: 443/tcp (https)', type: 'log-success' },
             { text: '[-] Fingerprinting services...', type: 'log-entry' },
             { text: `[!] Target: ${targetValue} - nginx/1.14.0 (Ubuntu) detected.`, type: 'log-warning' },
-            { text: '[*] Scan Complete. Executive report generated.', type: 'log-cmd' }
+            { text: '[*] Scan Complete. Intelligence report finalized.', type: 'log-cmd' }
         ],
         'vulnscan': [
             { text: `[*] Initiating web vulnerability scan on ${targetValue}...`, type: 'log-entry' },
@@ -73,7 +124,7 @@ const getLogs = (opId, targetValue) => {
             { text: '[-] Checking for XSS vulnerabilities...', type: 'log-entry' },
             { text: `[!] Findings for ${targetValue}: Insecure Header: X-Frame-Options missing`, type: 'log-warning' },
             { text: '[-] Directory traversal check complete.', type: 'log-entry' },
-            { text: '[*] Analysis complete. 2 Findings identified.', type: 'log-cmd' }
+            { text: '[*] Analysis complete. Critical findings identified.', type: 'log-cmd' }
         ],
         'handshake': [
             { text: `[*] Initializing Portal peer handshake with ${targetValue}...`, type: 'log-entry' },
@@ -87,7 +138,7 @@ const getLogs = (opId, targetValue) => {
             { text: '[-] Parsing domain metadata...', type: 'log-entry' },
             { text: '[+] Lead Identified: CRO @ ' + targetValue, type: 'log-success' },
             { text: '[+] Lead Identified: DPO @ ' + targetValue, type: 'log-success' },
-            { text: '[*] 12 strategic contacts added to dispatch pool.', type: 'log-cmd' }
+            { text: '[*] Strategic contacts added to dispatch pool.', type: 'log-cmd' }
         ]
     };
 
@@ -175,7 +226,6 @@ function promptForInput(menuItem) {
         }
     });
 
-    // Mobile helper: ensure clicking the line focuses the input
     promptLine.onclick = () => input.focus();
 }
 
@@ -201,14 +251,64 @@ function runOperation(opId, targetValue) {
             logIndex++;
         } else {
             clearInterval(logInterval);
-            const fin = document.createElement('div');
-            fin.className = 'log-cmd';
-            fin.style.marginTop = '20px';
-            fin.textContent = 'Operation Finalized. Press close (X) to return to dashboard.';
-            body.appendChild(fin);
-            body.scrollTop = body.scrollHeight;
+            showIntelligenceReport(opId, targetValue);
         }
     }, 400);
+}
+
+function showIntelligenceReport(opId, targetValue) {
+    const body = document.getElementById('terminal-body');
+    const data = intelligenceData[opId] || {
+        title: 'Generic Operational Report',
+        risk: 'LOW',
+        summary: 'Operation executed successfully with standard parameters.',
+        findings: ['No abnormal behaviors detected.', 'Buffer integrity verified.'],
+        compliance: 'General compliance guidelines maintained.',
+        evidence: 'Log checksums verified.'
+    };
+
+    const panel = document.createElement('div');
+    panel.className = 'intel-panel';
+
+    panel.innerHTML = `
+        <div class="intel-header">
+            <span class="intel-title">${data.title}</span>
+            <span class="intel-tag risk-${data.risk.toLowerCase()}">RISK: ${data.risk}</span>
+        </div>
+        <div class="intel-section">
+            <div class="intel-label">Target Assessment</div>
+            <div class="intel-content">${targetValue}: ${data.summary}</div>
+        </div>
+        <div class="intel-section">
+            <div class="intel-label">Core Findings</div>
+            <div class="intel-content">
+                <ul style="padding-left: 20px;">
+                    ${data.findings.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+        <div class="intel-section">
+            <div class="intel-label">DPA Compliance Impact</div>
+            <div class="intel-content">${data.compliance}</div>
+        </div>
+        <div class="intel-section">
+            <div class="intel-label">Executive Evidence</div>
+            <div class="intel-evidence">${data.evidence}</div>
+        </div>
+        <div style="margin-top: 20px; color: var(--accent); font-size: 0.8rem; text-align: center;">
+            [ MWITHIGA LABS | DIGITAL RISK ASSURANCE | v2.0-SENTINEL ]
+        </div>
+    `;
+
+    body.appendChild(panel);
+    body.scrollTop = body.scrollHeight;
+
+    const fin = document.createElement('div');
+    fin.className = 'log-cmd';
+    fin.style.marginTop = '20px';
+    fin.textContent = 'Intelligence Dispatched. Press close (X) to exit.';
+    body.appendChild(fin);
+    body.scrollTop = body.scrollHeight;
 }
 
 function typeText(element, text, callback) {

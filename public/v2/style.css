@@ -407,3 +407,83 @@ footer {
 .risk-low {
     color: #8bc34a;
 }
+
+/* Intelligence Panel Styles */
+.intel-panel {
+    margin-top: 20px;
+    padding: 1.5rem;
+    background: rgba(47, 169, 188, 0.05);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intel-header {
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.intel-title {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.intel-tag {
+    font-size: 0.7rem;
+    background: var(--forest);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.intel-section {
+    margin-bottom: 15px;
+}
+
+.intel-label {
+    font-size: 0.75rem;
+    color: var(--forest);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.intel-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.intel-evidence {
+    font-family: monospace;
+    font-size: 0.85rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    color: var(--text-dim);
+    border-left: 2px solid var(--forest);
+    white-space: pre-wrap;
+}
