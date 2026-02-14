@@ -366,6 +366,26 @@ footer {
     font-weight: bold;
 }
 
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    color: var(--accent);
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1rem;
+    outline: none;
+    flex-grow: 1;
+    padding: 0;
+    caret-color: var(--accent);
+}
+
 .ascii-banner {
     color: var(--accent);
     font-family: monospace;
