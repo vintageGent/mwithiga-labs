@@ -91,45 +91,75 @@ const scanLogs = {
 };
 
 let currentToolId = '';
+let isTyping = false;
 
 function launchTool(toolId) {
+    if (isTyping) return; // Prevent double trigger
+
     currentToolId = toolId;
     const body = document.getElementById('terminal-body');
-    body.innerHTML = ''; // Clear terminal
+    const modal = document.getElementById('report-modal');
 
-    // Display Banner
-    const banner = document.createElement('div');
+    if (!body || !modal) {
+        console.error('Terminal components missing');
+        return;
+    }
+
+    body.innerHTML = '';
+    modal.style.display = 'block';
+
+    // Display Banner in a pre tag for preserving ASCII
+    const banner = document.createElement('pre');
     banner.className = 'ascii-banner';
     banner.textContent = banners[toolId] || `Launching ${toolId}...`;
     body.appendChild(banner);
 
+    isTyping = true;
     typeText(body, `\nWelcome to ${toolId.toUpperCase()}. Digital Risk & Compliance operative active.\n\n`, () => {
+        isTyping = false;
         showMenu(toolId);
     });
-
-    document.getElementById('report-modal').style.display = 'block';
 }
 
 function showMenu(toolId) {
     const body = document.getElementById('terminal-body');
     const menuContainer = document.createElement('div');
-    menuContainer.innerHTML = '--- Choose an Operation ---\n';
+    menuContainer.className = 'terminal-menu';
+
+    const title = document.createElement('div');
+    title.textContent = '--- Choose an Operation ---';
+    title.style.marginBottom = '10px';
+    menuContainer.appendChild(title);
 
     const menuItems = toolMenus[toolId] || [];
     menuItems.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'terminal-menu-item';
-        div.textContent = item.label;
-        div.onclick = () => runOperation(item.id);
-        menuContainer.appendChild(div);
+        const btn = document.createElement('button');
+        btn.className = 'terminal-menu-item-btn';
+        btn.textContent = item.label;
+        btn.style.display = 'block';
+        btn.style.width = 'fit-content';
+        btn.style.background = 'transparent';
+        btn.style.border = 'none';
+        btn.style.textAlign = 'left';
+        btn.onclick = () => runOperation(item.id);
+        menuContainer.appendChild(btn);
     });
 
     body.appendChild(menuContainer);
+    body.scrollTop = body.scrollHeight;
 }
 
 function runOperation(opId) {
     const body = document.getElementById('terminal-body');
-    body.innerHTML += `\n> Selected option: ${opId}\n`;
+
+    // Remove individual menu items to prevent re-click during operation
+    const menu = body.querySelector('.terminal-menu');
+    if (menu) menu.remove();
+
+    const choiceText = document.createElement('div');
+    choiceText.className = 'log-cmd';
+    choiceText.textContent = `> Selected: ${opId}`;
+    body.appendChild(choiceText);
 
     const logs = scanLogs[opId] || [
         { text: `[*] Initiating ${opId} protocol...`, type: 'log-entry' },
@@ -149,27 +179,41 @@ function runOperation(opId) {
             logIndex++;
         } else {
             clearInterval(logInterval);
-            body.innerHTML += `\n<div class="log-cmd">Operation Finalized. Press 'X' to close or click another tool.</div>`;
+            const fin = document.createElement('div');
+            fin.className = 'log-cmd';
+            fin.style.marginTop = '20px';
+            fin.textContent = 'Operation Finalized. Press close to exit.';
+            body.appendChild(fin);
+            body.scrollTop = body.scrollHeight;
         }
-    }, 400);
+    }, 300);
 }
 
-function typeText(element, text, callback, speed = 20) {
+function typeText(element, text, callback) {
     let i = 0;
+    const typingSpan = document.createElement('span');
+    element.appendChild(typingSpan);
+
     const interval = setInterval(() => {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+            typingSpan.textContent += text.charAt(i);
             i++;
+            element.scrollTop = element.scrollHeight;
         } else {
             clearInterval(interval);
             if (callback) callback();
         }
-    }, speed);
+    }, 15);
 }
 
 function closeModal() {
     document.getElementById('report-modal').style.display = 'none';
+    isTyping = false; // Reset typing state on close
 }
+
+// Global scope assignments to ensure HTML onclick works
+window.launchTool = launchTool;
+window.closeModal = closeModal;
 
 window.onclick = function (event) {
     const modal = document.getElementById('report-modal');
@@ -186,7 +230,7 @@ window.onload = function () {
     }
 }
 
-// Subtle background tracking for glow effect
+// Subtle background tracking
 document.addEventListener('mousemove', (e) => {
     const bg = document.querySelector('.background-animation');
     if (!bg) return;
