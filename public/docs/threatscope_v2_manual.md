@@ -1,30 +1,34 @@
-# ThreatScope V2: Focused Network & Vulnerability Intelligence
+# ThreatScope V2: Perimeter Risk & Compliance Intelligence 🛡️
 
-## 📋 Capability Overview
-**ThreatScope V2** is a high-authority reconnaissance and vulnerability assessment engine designed for technical operatives and security analysts. It provides deep visibility into network perimeters, web application weaknesses, and supply chain vulnerabilities.
+**Technical Evidence for Institutional Hardening.**
 
-## 🛠️ Core Modules
+## 💎 The Strategic Core (What, Why, How)
 
-### 1. Network Reconnaissance (`netscan`)
-- Precise TCP/UDP port discovery.
-- Service version fingerprinting (identifying legacy or vulnerable software).
-- Perimeter mapping to identify unauthorized entry points.
+### **WHAT: Perpetual Vulnerability Auditing**
+ThreatScope V2 is a high-authority scanning engine designed to audit network perimeters for critical vulnerabilities (SQLi, XSS, Broken Auth) and modern configuration exposures.
 
-### 2. Web Vulnerability Audit (`vulnscan`)
-- **SQL Injection (SQLi)**: Identification of database-level exposure.
-- **Cross-Site Scripting (XSS)**: Mapping client-side execution risks.
-- **Insecure Headers**: Auditing for missing security benchmarks (e.g., HSTS, Content Security Policy).
-- **Directory Traversal**: Identifying unauthorized file-system access paths.
+### **WHY: Safeguarding Institutional Continuity**
+Under the **Kenya Data Protection Act (2019)** and **CMCA (2024)**, organizations face penalties of up to **KSh 20 Million** for failing to implement "appropriate technical and organizational measures." ThreatScope provides the technical evidence required to prove compliance and avoid catastrophic reputational loss.
 
-### 3. Supply Chain Integrity (`dep_scan`)
-- Automated auditing of `requirements.txt` and project dependencies.
-- Matching libraries against known vulnerability databases (CVEs).
+### **HOW: Automated Hardening & Strategic Reporting**
+By combining deep parameter scanning with "Executive Strategic Reporting," ThreatScope transforms raw vulnerability data into boardroom-ready intelligence and actionable remediation roadmaps.
 
-### 4. Secret Correlation (`secret_scan`)
-- Heuristic scanning for exposed API keys, credentials, and environmental secrets within the codebase.
+---
 
-## ⚖️ DPA (2019) Compliance Alignment
-ThreatScope V2 provides the **Technical Evidence** required under Section 31 of the Kenya Data Protection Act. It enables organizations to demonstrate that they have implemented appropriate technical measures to protect data against unauthorized disclosure or access.
+## 🦾 Capabilities & ROI
+
+### 1. DPA Section 31 Compliance Support
+ThreatScope identifies exactly where your "Security of Processing" fails. Every report maps findings directly to DPA sections, providing a non-repudiable audit trail for institutional compliance officers.
+
+### 2. Deep-Vector Vulnerability Detection
+Beyond standard port scanning, ThreatScope audits:
+- **API Surface & GraphQL**: Uncovering hidden data leak vectors.
+- **Sensitive Path Enumeration**: Finding exposed `.env`, `.git`, and config files.
+- **Modern Security Headers**: Auditing HSTS, CSP, and Permissions-Policy.
+
+### 3. Professional Intelligence Output
+ThreatScope generates premium HTML reports featuring the **Mwithiga Labs Executive Note**—a strategic summary that translates technical risk into financial and legal exposure.
+mplemented appropriate technical measures to protect data against unauthorized disclosure or access.
 
 ---
 **[ MWITHIGA LABS | DIGITAL RISK ASSURANCE ]**

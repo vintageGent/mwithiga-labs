@@ -1,25 +1,31 @@
-# Portal: Advanced P2P Data Sovereignty
+# Portal: Strategic P2P Data Exchange Engine 🚀
 
-## 📋 Capability Overview
-**Portal** is a secure, zero-configuration Peer-to-Peer (P2P) file transfer system designed for technical operatives who require instant, encrypted data exchange between disparate nodes without relying on centralized intermediaries.
+**Zero-Log Institutional Communications.**
 
-## 🛠️ Core Architecture
+## 💎 The Strategic Core (What, Why, How)
 
-### 1. Peer-to-Peer Handshake
-- Direct node discovery and synchronization.
-- Automated key exchange for payload encryption.
-- Multi-factor peer identity verification.
+### **WHAT: Encrypted P2P Secure Handshakes**
+Portal is a high-authority data transfer engine that establishes direct, encrypted connections between institutional nodes without the use of intermediate cloud storage or external buffers.
 
-### 2. Payload Encryption
-- Industry-standard AES-256-GCM encryption for all data in transit.
-- RSA-4096 ephemeral key generation ensuring forward secrecy.
+### **WHY: Minimizing Breach Surface (DPA Section 41)**
+Under the **Data Protection Act (2019)**, the "Security of Processing" requires appropriate technical measures to prevent unauthorized data access. Portal fulfills this by ensuring zero-log intermediate buffering—data transitions directly from sender to receiver, leaving no trace on the public internet.
 
-### 3. Data Sovereignty
-- Zero logging of payload data on intermediate buffers.
-- Direct memory-to-memory streaming to minimize disk I/O signatures.
-
-## ⚖️ DPA (2019) Compliance Alignment
-Portal enables compliance with Section 41 of the Kenya Data Protection Act by implementing appropriate technical measures to prevent unauthorized access and ensure the secure transfer of personal data across networks.
+### **HOW: Non-Repudiable Technical Evidence**
+By automatically calculating **SHA-256 integrity hashes** and generating **Strategic Transfer Dispatches**, Portal provides the technical evidence required for institutional audits and compliance verification.
 
 ---
-**[ MWITHIGA LABS | DIGITAL RISK ASSURANCE ]**
+
+## 🦾 Capabilities & ROI
+
+### 1. Zero-Trust Local Architecture
+Portal operates exclusively on the local network (LAN/WiFi), ensuring that sensitive data shards never leave the physical or virtual perimeter of the institution.
+
+### 2. Verified Data Integrity
+The engine guarantees 100% payload integrity through an automated cryptographic handshake. If a single bit is altered or corrupted during transit, the session is terminated and flagged in the Strategic Dispatch.
+
+### 3. Automated Compliance Auditing
+Every transfer generates a formal `.md` dispatch documenting:
+- **Peer IP Identity**
+- **Payload Reference**
+- **SHA-256 Verification Status**
+- **DPA Section 41 Alignment**

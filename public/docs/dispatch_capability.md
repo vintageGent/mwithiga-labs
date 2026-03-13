@@ -5,21 +5,33 @@
 
 ## 🛠️ Core Capabilities
 
-### 1. Contact Intelligence
-- Automated harvesting of public-facing contact data.
-- Scrubbing metadata buffers for professional identifiers (DPOs, Security Managers).
-- Verification of contact integrity to reduce outreach bounce rates.
+### Dispatch: Communications Intelligence Engine 🛡️☎️
 
-### 2. Strategic Outreach
-- One-click engagement protocols for high-authority leads.
-- Campaign management for coordinated communication work-streams.
+**Standardizing Institutional Outreach.**
 
-### 3. OSINT Correlation
-- Cross-referencing disparate data shards to build comprehensive target profiles.
-- Legitimate Interest assessment for business-to-business processing.
+## 💎 The Strategic Core (What, Why, How)
 
-## ⚖️ DPA (2019) Compliance Alignment
-Dispatch is designed with Section 25 (Data Protection by Design and Default) in mind. It incorporates automated "Legitimate Interest" filters and ensures all data processing follows the lawful principles outlined in Section 29 of the Kenya Data Protection Act.
+### **WHAT: Multi-Vector Contact Reconnaissance**
+Dispatch is a high-performance intelligence engine that audits digital surfaces to identify verified institutional connection points (Emails, Numbers, Social Profiles).
+
+### **WHY: Data Protection by Design (DPA Section 25)**
+Under the **Data Protection Act (2019)**, "Privacy by Design" requires organizations to minimize accidental exposure of sensitive contact data. Dispatch enables institutions to audit their own exposure and standardize outreach through verified, secure channels, reducing the risk of phishing and impersonation.
+
+### **HOW: Strategic Dossier Generation**
+By transforming raw contact harvesting into formal **Strategic Communications Dossiers**, Dispatch provides the technical evidence required to justify institutional contact pivots and standardized communication protocols.
+
+---
+
+## 🦾 Capabilities & ROI
+
+### 1. Hardened Intelligence Gathering
+Dispatch utilizes rendered browser sessions to uncover contact points hidden by complex client-side scripts, ensuring no verified institutional link is missed during an audit.
+
+### 2. Organizational Intelligence Pivot
+The engine facilitates immediate pivoting from a single intelligence point (e.g., an email address) to a full organizational exposure audit, mapping the relationship between personal and corporate digital footprints.
+
+### 3. Strategic Inquiry Templates
+Dispatch doesn't just find contacts; it standardizes the outreach. By Providing "What, Why, How" inquiry templates, it ensures all institutional communication starts from a high-authority, professional baseline.
 
 ---
 **[ MWITHIGA LABS | DIGITAL RISK ASSURANCE ]**
