@@ -176,6 +176,43 @@ h1.glitch-text {
   font-size: 0.8rem;
 }
 
+/* Strategic Framework */
+.strategic-framework {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  text-align: left;
+}
+
+.framework-item {
+  padding: 2.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.framework-item h3 {
+  font-size: 1.2rem;
+  color: var(--mint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.framework-item p {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .strategic-framework {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 /* Wings Container */
 .wings-container {
   display: flex;
@@ -209,6 +246,75 @@ h1.glitch-text {
 .wing-advisory .wing-title {
   color: #ffb74d;
   /* Amber/Gold for Advisory */
+}
+
+/* Compliance Alert */
+.compliance-alert {
+  margin: 4rem auto;
+}
+
+.alert-box {
+  padding: 2rem;
+  border-radius: 20px;
+  border-left: 4px solid #ff5252;
+  background: rgba(255, 82, 82, 0.03);
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alert-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: #ff5252;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pulse-red {
+  width: 12px;
+  height: 12px;
+  background: #ff5252;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff5252;
+  animation: alert-pulse 1.5s infinite;
+}
+
+@keyframes alert-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+}
+
+.alert-box p {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.alert-box strong {
+  color: #ff5252;
+}
+
+.alert-cta {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .advisory-intro {
