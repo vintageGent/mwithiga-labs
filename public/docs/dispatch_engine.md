@@ -1,9 +1,9 @@
 # Dispatch Engine: Automated Connectivity Protocols
 
-## 📋 Capability Overview
-The **Dispatch Engine** is the underlying logic framework for automated connectivity campaign management. It handles the low-level handshake and transport layers for Mwithiga Labs' high-performance outreach tools.
+## Capability Overview
+The Dispatch Engine is the underlying logic framework for automated connectivity management. It handles the low-level handshake and transport layers for Mwithiga Labs' high-performance outreach toolsets.
 
-## 🛠️ Core Capabilities
+## Core Capabilities
 
 ### 1. Transport Layer Security
 - Encrypted delivery of strategic dispatches.
@@ -14,7 +14,7 @@ The **Dispatch Engine** is the underlying logic framework for automated connecti
 - Automated retries for critical strategic communications.
 
 ### 3. Modular Integration
-- Pluggable architecture allowing custom connectivity modules to be hot-swapped into the engine.
+- Pluggable architecture allowing custom connectivity modules to be integrated into the engine.
 
 ---
 **[ MWITHIGA LABS | DIGITAL RISK ASSURANCE ]**

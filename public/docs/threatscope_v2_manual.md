@@ -1,34 +1,30 @@
-# ThreatScope V2: Perimeter Risk & Compliance Intelligence 🛡️
+# ThreatScope V2: Perimeter Risk & Compliance Intelligence
 
 **Technical Evidence for Institutional Hardening.**
 
-## 💎 The Strategic Core (What, Why, How)
+## Strategic Intelligence Core
 
-### **WHAT: Perpetual Vulnerability Auditing**
-ThreatScope V2 is a high-authority scanning engine designed to audit network perimeters for critical vulnerabilities (SQLi, XSS, Broken Auth) and modern configuration exposures.
+ThreatScope V2 is a high-authority scanning engine designed to audit network perimeters for critical vulnerabilities including SQLi, XSS, and broken authentication, as well as modern configuration exposures.
 
-### **WHY: Safeguarding Institutional Continuity**
-Under the **Kenya Data Protection Act (2019)** and **CMCA (2024)**, organizations face penalties of up to **KSh 20 Million** for failing to implement "appropriate technical and organizational measures." ThreatScope provides the technical evidence required to prove compliance and avoid catastrophic reputational loss.
+Under the Kenya Data Protection Act (2019) and CMCA (2024), organizations face significant penalties for failing to implement appropriate technical measures. ThreatScope provides the technical evidence required to demonstrate compliance and mitigate reputational loss.
 
-### **HOW: Automated Hardening & Strategic Reporting**
-By combining deep parameter scanning with "Executive Strategic Reporting," ThreatScope transforms raw vulnerability data into boardroom-ready intelligence and actionable remediation roadmaps.
+By combining deep parameter scanning with executive strategic reporting, ThreatScope transforms raw vulnerability data into boardroom-ready intelligence and actionable remediation roadmaps.
 
 ---
 
-## 🦾 Capabilities & ROI
+## Capabilities & ROI
 
 ### 1. DPA Section 31 Compliance Support
-ThreatScope identifies exactly where your "Security of Processing" fails. Every report maps findings directly to DPA sections, providing a non-repudiable audit trail for institutional compliance officers.
+ThreatScope identifies exactly where your security of processing fails. Every report maps findings directly to DPA sections, providing a non-repudiable audit trail for institutional compliance officers.
 
 ### 2. Deep-Vector Vulnerability Detection
 Beyond standard port scanning, ThreatScope audits:
-- **API Surface & GraphQL**: Uncovering hidden data leak vectors.
-- **Sensitive Path Enumeration**: Finding exposed `.env`, `.git`, and config files.
-- **Modern Security Headers**: Auditing HSTS, CSP, and Permissions-Policy.
+- API Surface & GraphQL: Uncovering hidden data leak vectors.
+- Sensitive Path Enumeration: Finding exposed .env, .git, and config files.
+- Modern Security Headers: Auditing HSTS, CSP, and Permissions-Policy.
 
 ### 3. Professional Intelligence Output
-ThreatScope generates premium HTML reports featuring the **Mwithiga Labs Executive Note**—a strategic summary that translates technical risk into financial and legal exposure.
-mplemented appropriate technical measures to protect data against unauthorized disclosure or access.
+ThreatScope generates premium HTML reports featuring the Mwithiga Labs Executive Note—a strategic summary that translates technical risk into financial and legal exposure.
 
 ---
 **[ MWITHIGA LABS | DIGITAL RISK ASSURANCE ]**
